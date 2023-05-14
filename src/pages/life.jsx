@@ -1,21 +1,30 @@
 import { useEffect } from "react";
+import React, { useState } from "react";
+
 
 export default function Life() {
+  const [count, setCount] = useState(1); // 分割代入
+
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+  };
+
   useEffect(() => {
-    console.log("マウント時");
     document.body.style.backgroundColor = "lightblue";
     return () => {
-      console.log("アンマウント時");
       document.body.style.backgroundColor = "";
     };
   }, [])
 
   return (
     <>
-      <div class="flex justify-center items-center m-4">
+      <h1 className="text-4xl flex justify-center m-4">
+        {count}
+      </h1>
+      <div className="flex justify-center items-center m-4">
         <button
-          // onClick={handleClick}
-          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-center"
+          onClick={handleClick}
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-center"
         >
           ボタン
         </button>
