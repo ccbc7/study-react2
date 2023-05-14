@@ -1,7 +1,9 @@
-// import React from "react";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Headline } from "../components/Headline";
+// import { Header } from "../components/Header";
+// import { Footer } from "../components/Footer";
+// import { Headline } from "../components/Headline";
+import { Header } from "@/components/Header";
+import { Headline } from "@/components/Headline";
+import { Footer } from "@/components/Footer";// 絶対パスがわかりやすい！
 import Link from "next/link"
 
 export default function SampleHTML() {
@@ -20,7 +22,7 @@ export default function SampleHTML() {
         onClick={() => alert("クリック！")}
         kid// チルドレン
         />
-        
+
         <section>
           <Link href="/BBB">
             <div class='flex justify-center items-center '>
